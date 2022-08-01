@@ -5,6 +5,19 @@
     
     <entry>
       <title></title>
+      <link href="/2022/08/01/java%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
+      <url>/2022/08/01/java%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Java语法规范"><a href="#Java语法规范" class="headerlink" title="Java语法规范"></a>Java语法规范</h1><ul><li>java语句必须以分号”;”结尾; </li><li>括号一一匹配;</li><li>主方法的代码只能写在{}里面;<br><img src="/../image/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E5%9B%BE.jpg" alt="语法实例"></li></ul><h1 id="变量与关键字"><a href="#变量与关键字" class="headerlink" title="变量与关键字"></a>变量与关键字</h1><p>java里面没有释放内存的操作，也没有指针<br>java里面的变量是存放在jvm管理的内存里面的,c语言是存放在内存中(有时候需要手动释放),Java是由jvm负责管理释放内存的。<br>Java是强类型语言,必须定义才能使用，和Python相反<br>具体定义与c语言相同<br>Java里面定义常量必须要用到final关键字</p><h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><p>&#x2F;&#x2F;单行注释<br>多行注释是先按下&#x2F;**然后再按回车，自动补全<br>&#x2F;&#x2F;TODO 待做标记</p><h1 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h1><h2 id="Java数据类型主要分为基本数据类型和引用类型"><a href="#Java数据类型主要分为基本数据类型和引用类型" class="headerlink" title="Java数据类型主要分为基本数据类型和引用类型"></a>Java数据类型主要分为基本数据类型和引用类型</h2><h2 id="基本数据类型-1"><a href="#基本数据类型-1" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><p>###计算机中的二进制表示<br>Java中的数字是有符号数，这点和C语言不同，C语言是有有符号和无符号数两种。所以Java需要在数字首位加一个符号位。<br>原码就是1111这个四位数表示7，0111表示-7.<br>原码做加减法很麻烦，然后需要引入反码<br>反码就是正数不变，负数符号位不变，其他位取反。<br>但是反码的0有正负之分很不合理，需要引入补码。<br>补码，正数的补码就是正数本身<br>负数的补码是在反码的基础上加一。<br>4bit的范围就是-8~7(java用的就是补码)</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
       <link href="/2022/07/29/java%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86/"/>
       <url>/2022/07/29/java%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86/</url>
       
