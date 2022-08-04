@@ -454,14 +454,14 @@ java语句必须以分号”;”结尾;
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-01
+                    2022-08-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    389
+                    916
                 </div>
                 
 
@@ -494,6 +494,36 @@ java语句必须以分号”;”结尾;
 <h1 id="变量与关键字"><a href="#变量与关键字" class="headerlink" title="变量与关键字"></a>变量与关键字</h1><p>java里面没有释放内存的操作，也没有指针<br>java里面的变量是存放在jvm管理的内存里面的,c语言是存放在内存中(有时候需要手动释放),Java是由jvm负责管理释放内存的。<br>Java是强类型语言,必须定义才能使用，和Python相反<br>具体定义与c语言相同<br>Java里面定义常量必须要用到final关键字</p>
 <h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><p>&#x2F;&#x2F;单行注释<br>多行注释是先按下&#x2F;**然后再按回车，自动补全<br>&#x2F;&#x2F;TODO 待做标记</p>
 <h1 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h1><h2 id="Java数据类型主要分为基本数据类型和引用类型"><a href="#Java数据类型主要分为基本数据类型和引用类型" class="headerlink" title="Java数据类型主要分为基本数据类型和引用类型"></a>Java数据类型主要分为基本数据类型和引用类型</h2><h2 id="基本数据类型-1"><a href="#基本数据类型-1" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><p>###计算机中的二进制表示<br>Java中的数字是有符号数，这点和C语言不同，C语言是有有符号和无符号数两种。所以Java需要在数字首位加一个符号位。<br>原码就是1111这个四位数表示7，0111表示-7.<br>原码做加减法很麻烦，然后需要引入反码<br>反码就是正数不变，负数符号位不变，其他位取反。<br>但是反码的0有正负之分很不合理，需要引入补码。<br>补码，正数的补码就是正数本身<br>负数的补码是在反码的基础上加一。<br>4bit的范围就是-8~7(java用的就是补码)</p>
+<h1 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h1><ul>
+<li>byte字节型(8个位，一个字节)范围:-128<del>127(-2^7</del>2^7-1)</li>
+<li>short短整型(16个位，两个字节)范围:-32768<del>32767(-2^15</del>2^15-1)</li>
+<li>int短整型(32个位，四个字节)范围:(-2^31~2^31-1)</li>
+<li>long长整型(64个位，八个字节)范围:(-2^63~2^31-1)，最后需要添加l或者L</li>
+<li>如果超过long了就需要用到BigInteger.这是一个对象。定义方法如下：<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">BigInteger</span> i <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BigInteger</span><span class="token punctuation">(</span><span class="token string">"1234567890987653223456"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+system<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>十进制，八进制(0开头)，十六进制(0x开头),二进制不能在代码里使用，会被当成十进制。</li>
+</ul>
+<h1 id="字符类型与字符串"><a href="#字符类型与字符串" class="headerlink" title="字符类型与字符串"></a>字符类型与字符串</h1><h2 id="字符类型"><a href="#字符类型" class="headerlink" title="字符类型"></a>字符类型</h2><ul>
+<li>char字符类型(16个比特位，2个字节，无符号)，从0~65535</li>
+<li>使用Unicode表示就是\u0000~\uffff,字符串要用单引号括起来。</li>
+<li>Java的字符串类型使用Unicode编码，Unicode编码包括ASCII码的全部内容同时还包括了全世界的语言，我们编译出来的.class文件也是使用Unicode编码得来的，Java其实支持中文变量名、方法、甚至类名。<br><img src="/../image/%E5%AD%97%E7%AC%A6%E5%9E%8B.jpg" alt="字符类型转换"></li>
+</ul>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><ul>
+<li>字符串不是基本类型，他是一个类，按住Ctrl键点击String即可查看相关说明。</li>
+</ul>
+<h2 id="小数类型"><a href="#小数类型" class="headerlink" title="小数类型"></a>小数类型</h2><ul>
+<li>float单精度(32bit 4个字节)</li>
+<li>double双精度(64bit 8个字节)</li>
+<li>存储结构<br><img src="/../image/%E5%B0%8F%E6%95%B0%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84.jpg" alt="浮点数存储结构"></li>
+<li>s是符号位(0是正，1是负)，e是阶码(表示指数位)，m是尾数(有效数字，开头一定是一，所以把一丢掉)<br>任意一个浮点数V都可以表示为<br>V&#x3D;(-1)^S * M *2^E</li>
+<li>例如，十进制5.25对应的二进制为101.01。S&#x3D;0,M&#x3D;1.0101（0101）,E&#x3D;2+128。</li>
+</ul>
+<h2 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h2><p>布尔类型（boolean）只有true和false两种值。</p>
+<h1 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h1><h2 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h2><ul>
+<li>隐式类型转换支持字节数小的类型转换成字节数大的，例如，int类型可以直接转换成float类型。</li>
+<li>规则：byte-&gt;short(char)-&gt;int-&gt;long-&gt;float-&gt;double</li>
+<li>注意：long是64位的，float是32位的，但是因为浮点数的存储规则，32位()远比64位二进制大得多</li>
+</ul>
 
                 
             </div>
@@ -938,7 +968,7 @@ java语句必须以分号”;”结尾;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">696</span>
+                        class="white-color">1.2k</span>
             
             
             
