@@ -553,14 +553,7 @@ system<span class="token punctuation">.</span>out<span class="token punctuation"
 当存在和字符串不同类型的类型与字符串进行拼接，该类型会直接被当作字符串进行处理，运算顺序从左向右<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li>++、–，自增运算符，自减运算符<br>a++,++a,a–,–a<br>a++是先返回值再进行自增操作<br>++a是先自增再返回值<br>a–是先返回值再自减<br>–a是先自减再返回值<br>++和–的优先级很高</li>
 <li>逻辑运算符<br>&amp;&amp; 与 ||或 !非</li>
-<li>位运算符<br>&amp;按位与<br>|按位或<br>^按位异或，不一样就是1<br>~按位非<pre class="line-numbers language-java" data-language="java"><code class="language-java">  <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">int</span> a<span class="token operator">=</span><span class="token number">7</span><span class="token punctuation">;</span><span class="token comment">//111</span>
-        <span class="token keyword">int</span> b<span class="token operator">=</span><span class="token number">19</span><span class="token punctuation">;</span><span class="token comment">//10011</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>a<span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-相与结果是<span class="token number">11</span>，也就是<span class="token number">3</span>。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>位运算符<br>&amp;按位与<br>|按位或<br>^按位异或，不一样就是1<br>~按位非<br>&#96;&#96;&#96;java<br>public class Main {<br>  public static void main(String[] args){<br>  int a&#x3D;7;&#x2F;&#x2F;111<br>  int b&#x3D;19;&#x2F;&#x2F;10011<br>  System.out.println(a&amp;b);<br>  }<br>}<br>相与结果是11，也就是3。</li>
 <li>三目运算符<br>为了简化代码得来的<br>判断条件?满足的返回值:不满足的返回值</li>
 </ul>
 
