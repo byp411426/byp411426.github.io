@@ -5,12 +5,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Hexo">
-    <meta name="description" content="Java语法规范
-java语句必须以分号”;”结尾; 
-括号一一匹配;
-主方法的代码只能写在{}里面;
-
-变量与关键字java里面没有释放内存的操作，也没有指针java里面的变量是存放在jvm管理的内存里面的,c语言是存放在内存中(有时候需">
+    <meta name="description" content="类与对象
+引用类型和类的首字母是大写，基本数据类型的首字母是小写
+引用类型变量代表一个对象，而基本类型数据的值都代表具体的值
+对象占用的内存用jvm统一管理，不需要手动释放
+基本数据类型变量的默认值一般都是0（char是不显示）引用类型变量">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -447,21 +446,21 @@ java语句必须以分号”;”结尾;
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-08-01
+                    2022-08-05
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-04
+                    2022-08-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    917
                 </div>
                 
 
@@ -486,75 +485,88 @@ java语句必须以分号”;”结尾;
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Java语法规范"><a href="#Java语法规范" class="headerlink" title="Java语法规范"></a>Java语法规范</h1><ul>
-<li>java语句必须以分号”;”结尾; </li>
-<li>括号一一匹配;</li>
-<li>主方法的代码只能写在{}里面;<br><img src="/../image/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E5%9B%BE.jpg" alt="语法实例"></li>
+                <h2 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h2><ul>
+<li>引用类型和类的首字母是大写，基本数据类型的首字母是小写</li>
+<li>引用类型变量代表一个对象，而基本类型数据的值都代表具体的值</li>
+<li>对象占用的内存用jvm统一管理，不需要手动释放</li>
+<li>基本数据类型变量的默认值一般都是0（char是不显示）引用类型变量默认是null</li>
+<li>方法就相当于c语言的函数，主方法不能有返回值。执行到return的时候直接退出，比break强大得多。</li>
 </ul>
-<h1 id="变量与关键字"><a href="#变量与关键字" class="headerlink" title="变量与关键字"></a>变量与关键字</h1><p>java里面没有释放内存的操作，也没有指针<br>java里面的变量是存放在jvm管理的内存里面的,c语言是存放在内存中(有时候需要手动释放),Java是由jvm负责管理释放内存的。<br>Java是强类型语言,必须定义才能使用，和Python相反<br>具体定义与c语言相同<br>Java里面定义常量必须要用到final关键字</p>
-<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><p>&#x2F;&#x2F;单行注释<br>多行注释是先按下&#x2F;**然后再按回车，自动补全<br>&#x2F;&#x2F;TODO 待做标记</p>
-<h1 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h1><h2 id="Java数据类型主要分为基本数据类型和引用类型"><a href="#Java数据类型主要分为基本数据类型和引用类型" class="headerlink" title="Java数据类型主要分为基本数据类型和引用类型"></a>Java数据类型主要分为基本数据类型和引用类型</h2><h2 id="基本数据类型-1"><a href="#基本数据类型-1" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><p>###计算机中的二进制表示<br>Java中的数字是有符号数，这点和C语言不同，C语言是有有符号和无符号数两种。所以Java需要在数字首位加一个符号位。<br>原码就是1111这个四位数表示7，0111表示-7.<br>原码做加减法很麻烦，然后需要引入反码<br>反码就是正数不变，负数符号位不变，其他位取反。<br>但是反码的0有正负之分很不合理，需要引入补码。<br>补码，正数的补码就是正数本身<br>负数的补码是在反码的基础上加一。<br>4bit的范围就是-8~7(java用的就是补码)</p>
-<h2 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h2><ul>
-<li>byte字节型(8个位，一个字节)范围:-128<del>127(-2^7</del>2^7-1)</li>
-<li>short短整型(16个位，两个字节)范围:-32768<del>32767(-2^15</del>2^15-1)</li>
-<li>int短整型(32个位，四个字节)范围:(-2^31~2^31-1)</li>
-<li>long长整型(64个位，八个字节)范围:(-2^63~2^31-1)，最后需要添加l或者L</li>
-<li>如果超过long了就需要用到BigInteger.这是一个对象。定义方法如下：<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">BigInteger</span> i <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BigInteger</span><span class="token punctuation">(</span><span class="token string">"1234567890987653223456"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-system<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li>十进制，八进制(0开头)，十六进制(0x开头),二进制不能在代码里使用，会被当成十进制。</li>
+<h2 id="方法的重载"><a href="#方法的重载" class="headerlink" title="方法的重载"></a>方法的重载</h2><ul>
+<li>原本的方法，只不过是形参不同或者形参和返回值类型都不同，仅仅返回值类型不同是错误的。因为形参相同时，不知道调用哪个方法。</li>
 </ul>
-<h2 id="字符类型与字符串"><a href="#字符类型与字符串" class="headerlink" title="字符类型与字符串"></a>字符类型与字符串</h2><h3 id="字符类型"><a href="#字符类型" class="headerlink" title="字符类型"></a>字符类型</h3><ul>
-<li>char字符类型(16个比特位，2个字节，无符号)，从0~65535</li>
-<li>使用Unicode表示就是\u0000~\uffff,字符串要用单引号括起来。</li>
-<li>Java的字符串类型使用Unicode编码，Unicode编码包括ASCII码的全部内容同时还包括了全世界的语言，我们编译出来的.class文件也是使用Unicode编码得来的，Java其实支持中文变量名、方法、甚至类名。<br><img src="/../image/%E5%AD%97%E7%AC%A6%E5%9E%8B.jpg" alt="字符类型转换"></li>
+<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><ul>
+<li>有参构造和无参构造</li>
+<li>通过this指代当前对象的属性</li>
+<li>在定义了新的有参构造以后，原先的默认的无参构造方法会被覆盖，除非再手动写一个无参构造函数</li>
 </ul>
-<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><ul>
-<li>字符串不是基本类型，他是一个类，按住Ctrl键点击String即可查看相关说明。</li>
+<h2 id="静态变量与静态方法"><a href="#静态变量与静态方法" class="headerlink" title="静态变量与静态方法"></a>静态变量与静态方法</h2><ul>
+<li>静态变量和静态方法是类具有的属性，是所有对象所共享的内容，通过static关键字将一个变量或者方法声明为静态的，也就是说对象再多，也就只有那一个方法或变量，其中一个对象改变，其他所有变量都得改变。</li>
+<li>示例代码：<br>Student类<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+  <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+  <span class="token keyword">char</span> x<span class="token punctuation">;</span>
+  <span class="token keyword">static</span> <span class="token keyword">int</span> b<span class="token punctuation">;</span>
+  <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token operator">=</span>name<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+主类<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span>  <span class="token class-name">Main</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+      <span class="token class-name">Student</span> a <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"林徽因"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      a<span class="token punctuation">.</span>b<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">;</span>
+      <span class="token class-name">Student</span> y<span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"lili"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>y<span class="token punctuation">.</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+ <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+运行结果<br><img src="/../image/%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.jpg" alt="静态变量"></li>
+<li>静态的东西不用创建对象，直接用类就可以访问</li>
+<li>静态方法是类所拥有的，不需要创建对象就可以直接调用</li>
 </ul>
-<h3 id="小数类型"><a href="#小数类型" class="headerlink" title="小数类型"></a>小数类型</h3><ul>
-<li>float单精度(32bit 4个字节)</li>
-<li>double双精度(64bit 8个字节)</li>
-<li>存储结构<br><img src="/../image/%E5%B0%8F%E6%95%B0%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84.jpg" alt="浮点数存储结构"></li>
-<li>s是符号位(0是正，1是负)，e是阶码(表示指数位)，m是尾数(有效数字，开头一定是一，所以把一丢掉)<br>任意一个浮点数V都可以表示为<br>V&#x3D;(-1)^S * M *2^E</li>
-<li>例如，十进制5.25对应的二进制为101.01。S&#x3D;0,M&#x3D;1.0101（0101）,E&#x3D;2+128。</li>
+<p>###简述类的加载机制<br>类并不是一开始就全部加载好的，只有在需要的时候才会加载</p>
+<ul>
+<li>访问类的静态变量或者为静态变量赋值</li>
+<li>new创建类的实例</li>
+<li>调用类的静态方法</li>
+<li>子类初始化</li>
+<li>其他情况会在反射中提到</li>
 </ul>
-<h2 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h2><p>布尔类型（boolean）只有true和false两种值。</p>
-<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><h3 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h3><ul>
-<li>隐式类型转换支持字节数小的类型转换成字节数大的，例如，int类型可以直接转换成float类型。</li>
-<li>规则：byte-&gt;short(char)-&gt;int-&gt;long-&gt;float-&gt;double</li>
-<li>注意：long是64位的，float是32位的，但是因为浮点数的存储规则，32位(阶码是最高127，2的127次方)远比64位二进制大得多</li>
-</ul>
-<h3 id="显式类型转换"><a href="#显式类型转换" class="headerlink" title="显式类型转换"></a>显式类型转换</h3><p>牺牲精度强行进行转换</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">short</span> i<span class="token operator">=</span><span class="token number">129</span><span class="token punctuation">;</span>
-        <span class="token keyword">byte</span> a <span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span> i<span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
+<p>所有标记为静态的内容，在类加载的时候就直接分配了，而不是创建对象的时候分配，所以说静态内容在第一个对象创建之前就已经加载完成了。<br>类的成员变量的定义和赋值是两个阶段，在定义时会使用默认值。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">static</span> <span class="token keyword">int</span> a<span class="token operator">=</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> a<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>运行结果为-127。129(0000000010000001)-&gt;byte -127(10000001)</p>
-<h3 id="数据类型自动提升"><a href="#数据类型自动提升" class="headerlink" title="数据类型自动提升"></a>数据类型自动提升</h3><p>byte、short、char类型在参与运算的过程中，自动提升到int类型</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">byte</span> a <span class="token operator">=</span><span class="token number">102</span><span class="token punctuation">;</span>
-        a<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span><span class="token punctuation">(</span>a<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>如果不加(byte)会报错，因为计算过程中a提升到int参与计算了，赋值的时候，int不能转换为byte，所以会报错。</p>
-<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="赋值运算符和算术运算符"><a href="#赋值运算符和算术运算符" class="headerlink" title="赋值运算符和算术运算符"></a>赋值运算符和算术运算符</h3><ul>
-<li>赋值运算符+、—、*、&#x2F;、%</li>
-<li>+号还可以用来连接字符串<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"你好，"</span><span class="token operator">+</span><span class="token string">"世界"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Student</span><span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
-当存在和字符串不同类型的类型与字符串进行拼接，该类型会直接被当作字符串进行处理，运算顺序从左向右<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>++、–，自增运算符，自减运算符<br>a++,++a,a–,–a<br>a++是先返回值再进行自增操作<br>++a是先自增再返回值<br>a–是先返回值再自减<br>–a是先自减再返回值<br>++和–的优先级很高</li>
-<li>逻辑运算符<br>&amp;&amp; 与 ||或 !非</li>
-<li>位运算符<br>&amp;按位与<br>|按位或<br>^按位异或，不一样就是1<br>~按位非<br>&#96;&#96;&#96;java<br>public class Main {<br>  public static void main(String[] args){<br>  int a&#x3D;7;&#x2F;&#x2F;111<br>  int b&#x3D;19;&#x2F;&#x2F;10011<br>  System.out.println(a&amp;b);<br>  }<br>}<br>相与结果是11，也就是3。</li>
-<li>三目运算符<br>为了简化代码得来的<br>判断条件?满足的返回值:不满足的返回值</li>
+执行结果为<span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="代码块和静态代码块"><a href="#代码块和静态代码块" class="headerlink" title="代码块和静态代码块"></a>代码块和静态代码块</h2><ul>
+<li>代码块在<strong>对象创建时</strong>执行，也是属于类的内容，但是他在构造方法之前执行（和成员变量初始值一样），且每创建一个对象时只执行一次（相当于构造之前的准备工作）。</li>
+<li>静态代码块在<strong>类加载</strong>的时候就会执行</li>
+</ul>
+<h2 id="String和StringBuilder"><a href="#String和StringBuilder" class="headerlink" title="String和StringBuilder"></a>String和StringBuilder</h2><ul>
+<li>String str &#x3D; “abc”相当于String str &#x3D; new String(“abc”)</li>
+</ul>
+<p>String类中有很多方法</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span>  <span class="token class-name">Main</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">String</span> str <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"abd"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//全部大写</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//判断是否包含其中</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//判断字符串是否相等</span>
+        <span class="token class-name">String</span> a<span class="token operator">=</span><span class="token string">"asdh"</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> x <span class="token operator">=</span>a<span class="token operator">+</span>str<span class="token punctuation">;</span><span class="token comment">//运算符重载</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>String是Java中唯一重载运算符的类</p>
+</li>
+<li><p>字符串拼接会被优化成StringBuilder,StringBuilder也是一个类，能够存储可变长度的字符串</p>
+</li>
 </ul>
 
                 
@@ -582,7 +594,7 @@ system<span class="token punctuation">.</span>out<span class="token punctuation"
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/08/01/java%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">http://example.com/2022/08/01/java%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</a>
+                    <a href="http://example.com/2022/08/05/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">http://example.com/2022/08/05/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -791,48 +803,12 @@ system<span class="token punctuation">.</span>out<span class="token punctuation"
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
-            <div class="card">
-                <a href="/2022/08/04/Java%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                        
-                        <span class="card-title"></span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-04
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            byp
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2022/07/29/java%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86/">
+                <a href="/2022/08/05/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
                     <div class="card-image">
                         
                         
@@ -849,7 +825,45 @@ system<span class="token punctuation">.</span>out<span class="token punctuation"
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            byp
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/08/05/java%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E5%AE%9E%E6%88%98/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-05
                             </span>
                         <span class="publish-author">
                             
